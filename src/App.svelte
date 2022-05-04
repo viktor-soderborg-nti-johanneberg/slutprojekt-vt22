@@ -13,8 +13,6 @@
 
       let data = await resp.json();
   
-      console.log(data)
-  
       return data
     } catch (error) {
       console.log(error) 
@@ -32,7 +30,8 @@
     <h3>Highscore: {highscore}</h3>
   </section>
   <section id="opt2">
-    <button>Higher</button>
+    <h1>Facebook</h1> <!-- temp name -->
+    <button id="top">Higher</button>
     <button>Lower</button>
     <h3>Score: {score}</h3>
   </section>
@@ -40,7 +39,15 @@
 
 <style lang="scss">
 
-  $color: red;
+  $margin: 1rem;
+  
+  @mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
   main {
     min-height: 100vh;
@@ -54,45 +61,53 @@
   #opt1 {
     border: 1px solid red;
     grid-area: opt1;
-    display: flex;
-    align-items: center;
+    @include center;
   }
 
   #opt2 {
     border: 1px solid black;
     grid-area: opt2;
-    display: flex;
-    align-items: center;
+    @include center;
     // background-image: url("http://api.higherlowergame.com/_client/images/general/builder.jpg");
     // overflow: hidden;
     // background-size: cover;
   }
 
   #opt1 h3 {
-    margin-left: 1rem;
+    margin-left: $margin;
+    margin-right: auto;
   }
 
   #opt2 h3 {
-    margin-right: 1rem;
+    margin-right: $margin;
+    margin-left: auto;
   }
 
   #opt1 h3, #opt2 h3 {
     align-self: flex-end;
+    margin-top: auto;
   }
 
   #opt2 button {
     transition: all .5s ease;
-    border: 3px solid white;
+    border: 3px solid black;
     color: yellow;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin: 0 auto;
     cursor: pointer;
     border-radius: 2rem;
     text-transform: uppercase;
     background-color : transparent;
+  }
+
+  #opt2 h1 {
+    margin-top: auto;
+  }
+
+  #opt1 h1{
+    margin-top: auto;
   }
 
 </style>
