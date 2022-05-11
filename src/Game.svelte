@@ -88,7 +88,7 @@
   {#await main()}
     <p>Waiting for data...</p>
     {:then}
-    <article id="opt1">
+      <article id="opt1">
         <h1>{lastOption.Name}</h1>
         <h2>{lastOption.ParkingSpaces}</h2>
         <h3>Highscore: {highscore}</h3>
