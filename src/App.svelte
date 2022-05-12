@@ -44,9 +44,6 @@
         generateOptions()
       }
     }
-    
-    console.log(lastOption)
-    console.log(currentOption)
   }
   
   function checkAnswer(answer) {
@@ -100,15 +97,7 @@
 
 <style lang="scss">
 
-  $margin: 1rem;
-  
-  @mixin center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  @import './variables';
 
   main {
     min-height: 100vh;
